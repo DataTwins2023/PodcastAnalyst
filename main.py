@@ -35,14 +35,14 @@ def get_download_data(web = '數位時代'):
     last_week_2_end   = datetime.datetime.strftime(datetime.date.today() - datetime.timedelta(days=7),"%Y-%m-%d")
     last_week_2_start = datetime.datetime.strftime(datetime.date.today() - datetime.timedelta(days=13),"%Y-%m-%d")
     if web == '數位時代':
-        email    = "podcast@bnext.com.tw"
-        password = "16780474"
+        email    = ""
+        password = ""
     elif web == '經理人':
-        email    = "podcast@managertoday.com.tw"
-        password = "peih.shao0210"
+        email    = ""
+        password = ""
     elif web == '設計關鍵字':
-        email    = "sd@shoppingdesign.com.tw"
-        password = "sd16780474"
+        email    = ""
+        password = ""
 
     payload_1  = {
     "variables" : {
@@ -148,10 +148,8 @@ def get_download_data_soundon(web):
     
 def get_tokens() -> list:
     tokens = [
-        "iQ3bds0APgRMKUqxd6Xoaw9ZHPymVMpW2pMj8Z92bwT", # 群組1的token (柏緯不知道哪群是哪群QQ)
-        "d16loOqFSWJ6KcTED0slsArHn2JfhQtrkmMqv9nlFzt", # 群組2的token (柏緯不知道哪群是哪群QQ)
-        # "iPxe1y0kHcLMalF8gtbX6XWxw8tGGcKR6uJHZhvxKpB", # 欣諭的token(測試用)
-        # "iPxe1y0kHcLMalF8gtbX6XWxw8tGGcKR6uJHZhvxK" # 錯誤token(測試錯誤回覆用)
+        "iQ3bds0APgRMKUqxd6Xoaw9ZHPymVMpW2pMj8Z92bwT",
+        "d16loOqFSWJ6KcTED0slsArHn2JfhQtrkmMqv9nlFzt",
         "gvWOjlU1F9kOxTdG67XmpCfypSno2NyTZRnoXTGFLpo"
     ]
     return tokens
@@ -165,9 +163,7 @@ def send_line_msg(tokens: list, message: str) -> bool:
             "err_msg": ""
         }
         payload = {
-            "message": message,
-            # "stickerPackageId": "6362",
-            # "stickerId": "11087933"
+            "message": message
         }
         headers = {
             "Authorization": "Bearer " + token
