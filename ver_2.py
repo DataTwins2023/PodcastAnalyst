@@ -2,7 +2,7 @@
 import json
 
 import os
-from Module.DBHelper import DBHelper
+from DBHelper import DBHelper
 
 import time
 import datetime
